@@ -32,7 +32,7 @@ bthread("3", function () {
 })
 ----
 
-Your task is to introduce a fourth bthread that enforces the rule: if `A` is triggered, it cannot be triggered again until after `C` has been triggered. Once you incorporate this code,  and executing
+Your task is to introduce a fourth bthread that enforces the rule: if `A` is triggered, it cannot be triggered again until after `C` has been triggered. Once you incorporate your code,  executing
 
 [source,console]
 ---- 
