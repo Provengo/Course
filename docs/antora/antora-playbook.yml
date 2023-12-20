@@ -1,6 +1,6 @@
 site:
-  title: Provengo - Tutorials
-  url: https://provengo.github.io/Tutorials/
+  title: Provengo Online Course
+  url: https://provengo.github.io/Course/
   keys:
      google_analytics: 'G-RTBT49WYBY'
   start_page: 0.9.5@Tutorials:ROOT:index.adoc

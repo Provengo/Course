@@ -1,11 +1,7 @@
-name: Tutorials
+name: Online Course
 version: 0.9.5
 nav:
  - modules/ROOT/nav.adoc
-#  - modules/dsls/nav.adoc
-#  - modules/libraries/nav.adoc
-#  - modules/tutorial/nav.adoc
-# - modules/testory-internal/nav.adoc
 asciidoc:
   attributes:
     icons: font

@@ -1,9 +1,5 @@
 // .Provengo Tool MultiThreads
 * xref:index.adoc[]
-* Basics
-** xref:tutorials/1-first-steps.adoc[]
+* Basics 
+** xref:tutorials/basic_concepts.adoc[]
 * Advanced
-** xref:tutorials/dummy-bank-combi.adoc[]
-** xref:tutorials/online-store.adoc[] 
-* Reference
-** xref:load-order.adoc[]

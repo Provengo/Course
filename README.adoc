@@ -1,3 +1,3 @@
-# Tutorials for Provengo Tool Suite
+# An online course for Provengo Tool Suite
 
-IMPORTANT: Deployed page: https://provengo.github.io/Tutorials/
+Deployed page: https://provengo.github.io/Course/

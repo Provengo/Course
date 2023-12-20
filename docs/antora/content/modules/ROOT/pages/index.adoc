@@ -1,4 +1,4 @@
-= Provengo Tool Documentation
+= Provengo online course
 // :rootpath: ./
 :idprefix:
 :idseparator: -
@@ -6,13 +6,12 @@
 :!table-caption:
 :page-pagination:
 :page-layout: tiles
-:description: A description of the page stored in an HTML meta tag. This page is about all kinds of interesting things.
-:keywords: comma-separated values, stored, in an HTML, meta, tag
+:description: An online course for the Provengo test automation tools.
+:keywords: Provengo, Behavioral Programming, Test Automation
 
+This course is a collection of video clips and exercise for learnoing the Provengo test automation tool. It is intended for people who are new to Provengo and want to learn how to use it.
 
-Provengo is a tool for organizations that develop software systems. It improves communication between business, development, and QA teams, and improved product quality. This is done by making system requirements active - they can be validated, visualized, and imposed on the developed system using auto-generated, optimized test suites.
-
-NOTE: This is a tutorials site for Provengo's commandline tool. For the documentation site, please visit https://docs.provengo.tech[provengo.tech].
+NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full documentation of the tool.
 
 
 [1,2,1]
@@ -23,39 +22,13 @@ NOTE: This is a tutorials site for Provengo's commandline tool. For the document
 // | Intro to model-based-testing and to operating the Provengo tool
 // | MBT, Basics
 
-// #tags
-| xref:tutorials/1-first-steps.adoc[First Steps]
-| Working with the Provengo tool and creating your first model
+//#tags
+| xref:tutrials[First Steps]
+| The core concepts of Behavioral Programming and Provengo modelling techniques.
 | BP, bp-base
-// #/tags
-
-// #tags
-| xref:tutorials/dummy-bank.adoc[Dummy Bank Introduction]
-| Basic
-| Introduction with the app.
-// #/tags
-
-// #tags
-| xref:tutorials/morning.adoc[Morning Routine Introduction]
-| Basic
-| Introduction with the app.
-// #/tags
-
-// #tags
-| xref:tutorials/dummy-bank-combi.adoc[Dummy Bank Combi]
-| Advanced
-| DSL Combinations, Sealed Fate Pattern, StateMachines, Combi
-// #/tags
-
-// #tags
-| xref:tutorials/online-store.adoc[Online Store]
-| Advanced
-| Real World Example, Selenium
-// #/tags
-
-
+//#/tags
 |===
 
 
-> This site is a work in progress. Watch for more tutorials soon!
+
 
