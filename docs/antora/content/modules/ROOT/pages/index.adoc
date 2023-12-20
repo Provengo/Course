@@ -23,8 +23,8 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 // | MBT, Basics
 
 //#tags
-| xref:tutrials[First Steps]
-| The core concepts of Behavioral Programming and Provengo modelling techniques.
+| xref:tutorials/basic_concepts.adoc[First Steps]
+| The core concepts of Behavioral Programming and Provengo modelling techniques. 
 | BP, bp-base
 //#/tags
 |===
