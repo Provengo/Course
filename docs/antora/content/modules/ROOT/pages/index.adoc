@@ -23,11 +23,20 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 // | MBT, Basics
 
 //#tags
-| xref:tutorials/basic_concepts.adoc[First Steps]
+| xref:tutorials/basic_concepts.adoc[Modelling Basics]
 | The core concepts of Behavioral Programming and Provengo modelling techniques. 
-| BP, bp-base
+| b-thread, event, sync 
+//#/tags
+
+//#tags
+| xref:tutorials/using_js.adoc[Some JavaScript]
+| Using JavaScript to parametrize our models. 
+| JavaScript, parametrization, more on sync
 //#/tags
 |===
+
+
+
 
 
 

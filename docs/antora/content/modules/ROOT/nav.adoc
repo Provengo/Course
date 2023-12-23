@@ -2,4 +2,5 @@
 * xref:index.adoc[]
 * Basics 
 ** xref:tutorials/basic_concepts.adoc[]
+** xref:tutorials/using_js.adoc[]
 * Advanced
