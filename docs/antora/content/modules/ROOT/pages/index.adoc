@@ -23,7 +23,7 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 // | MBT, Basics
 
 //#tags
-| xref:tutorials/basic_concepts.adoc[Modelling Basics]
+| xref:tutorials/basic_concepts.adoc[Modelling basics]
 | The core concepts of Behavioral Programming and Provengo modelling techniques. 
 | b-thread, event, sync 
 //#/tags
@@ -37,7 +37,7 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 //#tags
 | xref:tutorials/using_js.adoc[Selenium events]
 | Using Selenium to test a website. 
-| Selenium, web testing
+| Selenium, web testing 
 //#/tags
 
 
