@@ -1,3 +1,3 @@
 # An online course for Provengo Tool Suite
 
-Deployed page: https://provengo.github.io/Course/
+Deployed page: https://provengo.github.io/Course/Online%20Course/0.9.5/
