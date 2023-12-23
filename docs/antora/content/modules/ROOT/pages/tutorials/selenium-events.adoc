@@ -1,6 +1,5 @@
 # Using events to trigger Selenium based actions for website testing
 
-## Video
 
 [.text-center]
 video::selenium-events.mp4[width="80%"] 
@@ -18,28 +17,72 @@ Executing the command will generate a directory named `EX-selenium`, which conta
 
 [source,js]
 ----
-bthread("1", function () {
-    sync({ request: Event("A") })
-    sync({ request: Event("A") })
+// @provengo summon selenium
+
+const URL = 'https://demo.prestashop.com/#/en/login'
+const SESSION = "customer-session"
+
+user = {
+    email: 'bob.smith@prestashop.com',
+    password: 'bob.smith@prestashop.com'
+}
+
+product = {
+    name: 'HUMMINGBIRD PRINTED T-SHIRT'
+}
+
+
+bthread('login', function () {
+    with (new SeleniumSession(SESSION).start(URL)) {
+        sync({ request: Event("Begin(login)") })
+
+        switchFrame('//iframe[contains(@id,"framelive")]')
+        waitForVisibility('//img[contains(@src,"logo")]', 50000)
+        click('//span[contains(.,"Sign in")]')
+        writeText('//input[@id="field-email"]', user.email)
+        writeText('//input[@id="field-password"]', user.password)
+        click('//button[@id="submit-login"]')
+
+        sync({ request: Event("End(login)") })
+    }
 })
 
-bthread("2", function () {
-    sync({ request: Event("B") })
-    sync({ request: Event("B") })
+bthread("add to cart", function () {
+    with (new SeleniumSession(SESSION).start(URL)) {
+        sync({ request: Event("Begin(addToCart)") })
+
+        writeText('//input[@name="s"]', product.name + '\n')
+        click('(//div[@id="js-product-list"]//a)[1]')
+        click('//button[@data-button-action="add-to-cart"]')
+        click('//div[h4[contains(text(),"Product successfully added to your shopping cart")]]/button')
+
+        sync({ request: Event("End(addToCart)") })  
+    }
+})
+
+bthread('Add do card cannot start before login ends to cart', function () {
+    // Your code goes here
 })
 ----
 
-Your task is to introduce a third bthread that enforces that the events `A`, `B`, `A` are not triggered in this sequel. Once you incorporate your code,  executing
+Your task is to introduce a third bthread that enforces that `addToCart` does not begin befor `login` ends.
+
+Without your code, the command:
 
 [source,console]
 ---- 
 $ provengo analyze -f pdf EX-selenium 
 ----
 
-will generate a file named `EX-selenium/products/run-source/testSpace.pdf`. If you designed the fourth bthread correctly, this file should contain the following content: 
+will generate a file named `EX-selenium/products/run-source/testSpace.pdf`. That looks like this:
 
 [.text-center] 
-image::EX-selenium-expected.png[Expected Test Space, width=50%]    
+image::selenium-events-testSpace.svg[Expected Test Space, width=80%,link=self]
+
+It represents the fact that the two bthreads can run in parallel. Your task is to introduce a third bthread that enforces that `addToCart` does not begin befor `login` ends. When you are done, the file should look like this:
+
+[.text-center] 
+image::selenium-events-testSpace2.svg[Expected Test Space, width=30%,link=self]
 
 If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `EX-selenium/solution` directory.
 ====

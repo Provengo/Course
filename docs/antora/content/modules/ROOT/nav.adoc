@@ -3,5 +3,5 @@
 * Basics 
 ** xref:tutorials/basic_concepts.adoc[Basic Concepts]
 ** xref:tutorials/using_js.adoc[Using JavaScript]
-** xref:tutorials/selenium-events.adoc[Using Selenium Events]
+** xref:tutorials/selenium-events.adoc[Selenium Events]
 * Advanced

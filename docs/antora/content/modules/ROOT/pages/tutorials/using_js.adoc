@@ -1,7 +1,5 @@
 # Using JavaScripts to enhance and parametrize  our models
 
-## Video
-
 [.text-center]
 video::BP-js.mp4[width="80%"] 
 

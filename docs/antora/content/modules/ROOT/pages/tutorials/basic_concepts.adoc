@@ -1,7 +1,5 @@
 # Basic concepts: bthreads, envents, and sync.
 
-## Video
-
 [.text-center]
 video::basic_concepts.mp4[width="80%"]
 
