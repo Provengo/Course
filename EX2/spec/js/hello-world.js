@@ -10,13 +10,13 @@ events.forEach(function (e) {
 })
 
 
-// bthread("Don't allow two consecutive events of the same type", function () {
-//     last = Event(undefined)
+bthread("Don't allow two consecutive events of the same type", function () {
+    last = Event(undefined)
 
-//     while (true) {
-//         last = sync({ block: last, waitFor: events })
-//     }
-// });
+    while (true) {
+        last = sync({ block: last, waitFor: events })
+    }
+});
 
 
 
