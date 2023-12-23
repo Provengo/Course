@@ -33,6 +33,15 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 | Using JavaScript to parametrize our models. 
 | JavaScript, parametrization, more on sync
 //#/tags
+
+//#tags
+| xref:tutorials/using_js.adoc[Selenium events]
+| Using Selenium to test a website. 
+| Selenium, web testing
+//#/tags
+
+
+
 |===
 
 

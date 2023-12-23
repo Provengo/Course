@@ -1,6 +1,7 @@
 // .Provengo Tool MultiThreads
 * xref:index.adoc[]
 * Basics 
-** xref:tutorials/basic_concepts.adoc[]
-** xref:tutorials/using_js.adoc[]
+** xref:tutorials/basic_concepts.adoc[Basic Concepts]
+** xref:tutorials/using_js.adoc[Using JavaScript]
+** xref:tutorials/selenium-events.adoc[Using Selenium Events]
 * Advanced
