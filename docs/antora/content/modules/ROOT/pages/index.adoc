@@ -21,7 +21,7 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 //#tags
 | xref:tutorials/basic_concepts.adoc[Modelling basics]
 | The core concepts of Behavioral Programming and Provengo modelling techniques. 
-| b-thread, event, sync 
+| b-thread, event, sync.  
 //#/tags
 
 //#tags
