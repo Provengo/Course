@@ -9,7 +9,7 @@
 :description: An online course for the Provengo test automation tools.
 :keywords: Provengo, Behavioral Programming, Test Automation
 
-This course is a collection of video clips and exercise for learnoing the Provengo test automation tool. It is intended for people who are new to Provengo and want to learn how to use it.
+This course is a collection of video clips and exercise for learning the Provengo test automation tool. It is intended for people who are new to Provengo and want to learn how to use it.
 
 NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full documentation of the tool.
 
@@ -17,10 +17,6 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 [1,2,1]
 |===
 | Tutorial | Description | Keywords
-
-// | Working with Provengo
-// | Intro to model-based-testing and to operating the Provengo tool
-// | MBT, Basics
 
 //#tags
 | xref:tutorials/basic_concepts.adoc[Modelling basics]
