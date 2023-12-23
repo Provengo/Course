@@ -3,7 +3,7 @@
 ## Video
 
 [.text-center]
-video::BP-js.mp4[width="80%"]
+video::BP-js.mp4[width="80%"] 
 
 .Exercise: Using JavaScript to interpret the last two events.
 [%collapsible]
