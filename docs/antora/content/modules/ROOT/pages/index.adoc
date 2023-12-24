@@ -31,7 +31,7 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 //#/tags
 
 //#tags
-| xref:tutorials/using_js.adoc[Using Selenium events]
+| xref:tutorials/selenium_events.adoc[Using Selenium events]
 | Using Selenium to test a website. 
 | Selenium, web testing 
 //#/tags
