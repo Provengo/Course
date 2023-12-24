@@ -14,32 +14,20 @@ This course is a collection of video clips and exercise for learning the Proveng
 NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full documentation of the tool.
 
 
-[1,2,1]
+
+[cols="1,3"]
 |===
-| Tutorial | Description | Keywords
+| Lesson| Description 
 
-//#tags
-| xref:tutorials/basic_concepts.adoc[Modelling basics]
-| The core concepts of Behavioral Programming and Provengo modelling techniques. 
-| b-thread, event, sync.  
-//#/tags
+| xref:tutorials/basic_concepts.adoc[Bthreads and events]
+| We will develop two simple interleaved user storiesusing bthreads and events.
 
-//#tags
-| xref:tutorials/using_js.adoc[Some JavaScript]
-| Using JavaScript to parametrize our models. 
-| JavaScript, parametrization, more on sync
-//#/tags
+| xref:tutorials/using_js.adoc[JavaScript]
+| We will use JavaScript to parametrize models and to develop richer user stories. 
 
-//#tags
-| xref:tutorials/selenium_events.adoc[Using Selenium events]
-| Using Selenium to test a website. 
-| Selenium, web testing 
-//#/tags
-
-
-
+| xref:tutorials/selenium_events.adoc[Selenium]
+| We will see how to use Selenium to interact with the browser and how to use the selenium events to model a simple test of a website.
 |===
-
 
 
 
