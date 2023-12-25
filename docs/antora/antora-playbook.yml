@@ -3,7 +3,7 @@ site:
   url: https://provengo.github.io/Course/
   keys:
      google_analytics: 'G-RTBT49WYBY'
-  start_page: 0.9.5@Tutorials:ROOT:index.adoc
+  start_page: 0.9.5@Online Course:ROOT:index.adoc
 content:
     sources:
     - url: ./../..
