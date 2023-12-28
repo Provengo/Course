@@ -50,15 +50,9 @@ events.forEach(e => {
 // bthread("", function () {
 //     bp.sync({
 //         waitFor:
-//             EventSet("B and small length",
-//                 function (e) {
-//                     return e.name == 'B' && e.data.length < 4
-//                 }),
+//             EventSet("B with small length", e => e.name == 'B' && e.data.length < 4),
 
 //         block:
-//             EventSet("A and old age",
-//                 function (e) {
-//                     return e.name == 'A' && e.data.age > 6
-//                 })
+//             EventSet("A with old age", e => e.name == 'A' && e.data.age > 6)
 //     });
 // });
