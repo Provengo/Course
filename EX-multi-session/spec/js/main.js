@@ -103,16 +103,12 @@ players.forEach(player => {
     })
 })
 
-
-
 bthread("No events after End", function () {
     sync({ waitFor: EventSet("End", e => e.name == "End") })
     sync({ block: moves })
 })
 
 
-
-bp.log.info("Running")
 
 
 
