@@ -1,0 +1,44 @@
+# Using JavaScripts to enhance and parametrize  our models
+
+[.text-center]
+video::event-sets.mp4[width="80%"] 
+
+.Exercise: Using JavaScript to interpret the last two events.
+[%collapsible]
+====
+Open your terminal and navigate to a directory where you have write permissions. Execute the following command and respond to the prompts:
+[source,console]
+----
+$ provengo create EX-event-sets
+----
+
+Executing the command will generate a directory named `EX-event-sets`, which contains a `hello_world.js` file located in the `spec/js` subdirectory. Clear the existing content of this file and replace it with the following code. If desired, you can also rename the file:
+
+[source,js]
+----
+bthread("1", function () {
+    sync({ request: Event("A") })
+    sync({ request: Event("A") })
+})
+
+bthread("2", function () {
+    sync({ request: Event("B") })
+    sync({ request: Event("B") })
+})
+----
+
+Your task is to introduce a third bthread that enforces that the events `A`, `B`, `A` are not triggered in this sequel. Once you incorporate your code,  executing
+
+[source,console] 
+---- 
+$ provengo analyze -f pdf EX-event-sets 
+----
+
+will generate a file named `EX-event-sets/products/run-source/testSpace.pdf`. If you designed the fourth bthread correctly, this file should contain the following content: 
+  
+[.text-center] 
+image::EX-event-sets-expected.png[Expected Test Space, width=50%]    
+
+If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `EX-event-sets/solution` directory.
+====
+

@@ -20,13 +20,16 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 | Lesson| Description 
 
 | xref:tutorials/basic_concepts.adoc[Bthreads and events]
-| We will develop two simple interleaved user storiesusing bthreads and events.
+| Develop two simple interleaved user stories using bthreads and events.
 
 | xref:tutorials/using_js.adoc[JavaScript]
-| We will use JavaScript to parametrize models and to develop richer user stories. 
+| Use JavaScript to parametrize models and to develop richer user stories. 
 
 | xref:tutorials/selenium-events.adoc[Selenium]
-| We will see how to use Selenium to interact with the browser and how to use the selenium events to model a simple test of a website.
+| Use Selenium to interact with the browser and how to use the selenium events to model a simple test of a website.
+
+| xref:tutorials/event-sets.adoc[Event sets]
+| Add data to events and use `EvenSet`s to wait-for and block infinites sets of events.
 |===
 
 

@@ -1,3 +1,29 @@
+// @provengo summon selenium
+
+SeleniumSession.prototype.login = function (user) {
+    sync({ request: Event('Start(login)', { session: this, startEvent: true, payload: user }) });
+};
+
+bthread('login-triggerer', function () {
+    while (true) {
+        e = sync({ waitFor: EventSet("StartLogin", e => e.data != null && e.data.startEvent == true) });
+
+        user = e.data.payload;
+        bthread('login-worker', function () {
+            with (e.data.session) {
+                click('//span[contains(.,"Sign in")]')
+                writeText('//input[@id="field-email"]', user.email)
+                writeText('//input[@id="field-password"]', user.password)
+                click('//button[@id="submit-login"]')
+
+                sync({ request: Event('End(login)', { session: e.data.session, endEvent: true, payload: user }) });
+            }
+        })
+    }
+})
+
+
+
 
 // /**
 //  * Login to the store as a regular user.
@@ -6,13 +32,17 @@
 //  * @param {object} data - An object with the customer's email and password.
 //  */
 // defineAction("login", function (session, user) {
-//   with (session) {
-//     click("//span[contains(.,'Sign in')]")
-//     writeText('//input[@id="field-email"]', user.email)
-//     writeText('//input[@id="field-password"]', user.password)
-//     click('//button[@id="submit-login"]')
-//   }
+//     with (session) {
+//         click("//span[contains(.,'Sign in')]")
+//         writeText('//input[@id="field-email"]', user.email)
+//         writeText('//input[@id="field-password"]', user.password)
+//         click('//button[@id="submit-login"]')
+//     }
 // })
+
+
+
+
 
 // /**
 //  * Add a product to the cart.

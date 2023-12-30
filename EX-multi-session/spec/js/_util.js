@@ -63,17 +63,16 @@ defineAction = function (name, func) {
         let session = this;
 
         // Request a start event
-        var startData = Object.assign({ session: session, startEvent: true }, data);
-        sync({ request: bp.Event(`Start(${name})`, startData) });
+        sync({ request: bp.Event(`Start(${name})`, { session: session, startEvent: true, data: data }) });
 
 
         // Block any other start events in the session while the function is executing
         block(AnyStartInSession(this.name), function () {
+            // Execute the function
             func(session, data);
 
             // Request an end event
-            var endData = Object.assign({ session: session, endEvent: true }, data);
-            sync({ request: bp.Event(`End(${name})`, endData) });
+            sync({ request: bp.Event(`End(${name})`, { session: session, endEvent: true, data: data }) });
         });
 
     };
