@@ -1,9 +1,9 @@
-# Using JavaScripts to enhance and parametrize  our models
+# Using events with data and event sets
 
 [.text-center]
 video::event-sets.mp4[width="80%"] 
 
-.Exercise: Using JavaScript to interpret the last two events.
+.Exercise: Implementing the rules of tic-tac-toe.
 [%collapsible]
 ====
 Open your terminal and navigate to a directory where you have write permissions. Execute the following command and respond to the prompts:
@@ -14,31 +14,102 @@ $ provengo create EX-event-sets
 
 Executing the command will generate a directory named `EX-event-sets`, which contains a `hello_world.js` file located in the `spec/js` subdirectory. Clear the existing content of this file and replace it with the following code. If desired, you can also rename the file:
 
-[source,js]
+[source, javascript]
 ----
-bthread("1", function () {
-    sync({ request: Event("A") })
-    sync({ request: Event("A") })
+// The size of the board
+const N = 2
+
+// An array of the two players in the game.
+const players = ["X", "O"];
+
+// An array of all the cells in the board. Each cell is an object with a row and a column.
+const cells = [];
+for (let i = 0; i < N; i++) {
+    for (let j = 0; j < N; j++) {
+        cells.push({ row: i, col: j });
+    }
+}
+
+// An array of all the possible moves. Each move is an event with a name (X or O) and a data object with a row and a column.
+const moves = [];
+for (let i = 0; i < N; i++) {
+    for (let j = 0; j < N; j++) {
+        players.forEach(player => {
+            moves.push(Event(player, { row: i, col: j }));
+        });
+    }
+}
+
+// A b-thread that continously requests all the moves in the moves array.
+bthread("Continously eequest all the moves ", function () {
+    while (true)
+        sync({ request: moves })
 })
 
-bthread("2", function () {
-    sync({ request: Event("B") })
-    sync({ request: Event("B") })
+// A b-thread that enforce the alternation between the players.
+bthread("X begins and then the players play alternatingly", function () {
+    while (true) {
+        sync({ waitFor: EventSet("Any X Move", e => e.name == "X"), block: EventSet("Any O Move", e => e.name == "O") })
+        sync({ waitFor: EventSet("Any O Move", e => e.name == "O"), block: EventSet("Any X Move", e => e.name == "X") })
+    }
+})
+
+// A b-thread that enforce that a cell cannot be marked more than once.
+cells.forEach(cell => {
+    bthread("A cell cannot be marked more than once", function () {
+        sync({ waitFor: EventSet(`Any move in ${cell}`, e => e.data.row == cell.row && e.data.col == cell.col) })
+        sync({ block: EventSet(`Any move in ${cell}`, e => e.data.row == cell.row && e.data.col == cell.col) })
+    })
+})
+
+// B-threads that enforce that if a player fills a row, column or diagonal, the game ends.
+players.forEach(player => {
+    [0,1].forEach(i => {
+        bthread(`If a player ${player} fills row ${i}, the game ends`, function () {
+            for (let j = 0; j < N; j++)
+                sync({ waitFor: EventSet(`Any ${player} move in row ${i}`, e => e.name == player && e.data.row == i) })
+
+            sync({ request: Event("End", { winner: player }), block: moves })
+        })
+
+        bthread(`If a player ${player} fills column ${i}, the game ends`, function () {
+            for (let j = 0; j < N; j++)
+                sync({ waitFor: EventSet(`Any ${player} move in column ${i}`, e => e.name == player && e.data.col == i) })
+
+            sync({ request: Event("End", { winner: player }), block: moves })
+        })
+    })
+})
+
+// B-threads that enforce that no moves are allowed after the game ends.
+bthread("No events after End", function () {
+    sync({ waitFor: EventSet("End", e => e.name == "End") })
+    sync({ block: moves })
 })
 ----
 
-Your task is to introduce a third bthread that enforces that the events `A`, `B`, `A` are not triggered in this sequel. Once you incorporate your code,  executing
+Read this code carefully and make sure you understand what it does. It defines a game of tic-tac-toe, where the players are named `X` and `O`. The game is played on a 2x2 board. The game ends when one of the players fills a row, column or diagonal. The game is played by requesting events from the `moves` array. The b-threads in the code enforce the rules of the game. Note that N is a constant that is set to 2. This means that the game is played on a 2x2 board. You can change this constant to 3 or 4 to play on a 3x3 or 4x4 board, respectively. The 3x3 board is the standard tic-tac-toe board.
+
+Once you are done reading the code, execute the following command:
 
 [source,console] 
 ---- 
 $ provengo analyze -f pdf EX-event-sets 
 ----
 
-will generate a file named `EX-event-sets/products/run-source/testSpace.pdf`. If you designed the fourth bthread correctly, this file should contain the following content: 
+it will generate a file named `EX-event-sets/products/run-source/testSpace.pdf` that contains the test space of the model. Open the file and make sure that it looks like this: 
   
 [.text-center] 
-image::EX-event-sets-expected.png[Expected Test Space, width=50%]    
+image::event-sets-testSpace.svg[Expected Test Space, width=80%,link=self]    
 
-If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `EX-event-sets/solution` directory.
+Note that the events marked in red a are wrong. This because we did not specify that the game ends when a player fills a diagonal. Your job is to fix this. There are two diagonals: the one that goes from the top-left corner to the bottom-right corner and the one that goes from the top-right corner to the bottom-left corner. You need to add b-threads that enforce that if a player fills one of these diagonals, the game ends. 
+
+Once you are done, the test space should look like this:
+
+[.text-center] 
+image::event-sets-testSpace2.svg[Expected Test Space, width=80%, link=self]    
+
+
+If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `EX-event-sets/solution` directory. Note that we only plotted the state-space for `N=2`, but the solution works for any value of `N`.
 ====
 
