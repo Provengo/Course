@@ -49,7 +49,7 @@ const URL = 'https://demo.prestashop.com/#/en/login'
 
 
 // The size of the board
-const N = 2
+const N = 3
 
 // An array of the two players in the game.
 const players = ["X", "O"];
