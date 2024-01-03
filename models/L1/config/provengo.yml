@@ -1,0 +1,3 @@
+version: 2
+
+run.scripts.before-test: /home/geraw/provengo/Course/models/L1/config/init.sh

@@ -1,8 +1,23 @@
 // .Provengo Tool MultiThreads
-* xref:index.adoc[]
-* Basics 
-** xref:tutorials/basic_concepts.adoc[Step 1: Basic Constructs]
-** xref:tutorials/using_js.adoc[Step 2: JavaScript]
-** xref:tutorials/selenium-events.adoc[Step 3: Selenium]
-** xref:tutorials/event-sets.adoc[Step 4: Event Sets]
-* Advanced
+* Lesson 1: Introduction
+** xref:tutorials/welcome.adoc[Welcome]
+** xref:tutorials/overview.adoc[Overview]
+
+* Lesson 2: Provengo CLI
+** xref:tutorials/installation.adoc[Installation]
+** xref:tutorials/command-structure.adoc[Command structure]
+** xref:tutorials/provengo-docs.adoc[Provengo docs]
+
+* Lesson 3: Model-Based Quality Engineering (MBQE)
+** xref:tutorials/prestashop.adoc[The prestashop application that we will test]
+** xref:tutorials/writing-your-first-model.adoc[Writing your first model]
+** xref:tutorials/adding-an-interleaved-story.adoc[Interleaving]
+** xref:tutorials/refining-the-model.adoc[Model refinement]
+
+
+
+//** xref:tutorials/selenium-events.adoc[Step 3: Selenium]
+//** xref:tutorials/event-sets.adoc[Step 4: Event Sets]
+* Lesson 4: Actuation
+** xref:tutorials/selenium.adoc[Selenium]
+** xref:tutorials/step-files.adoc[Step files]

@@ -1,0 +1,51 @@
+version: '3'
+services:
+  mysql:
+    container_name: some-mysql
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: prestashop
+      command: chmod 644 /sql-config.cnf:ro
+    networks:
+      - prestashop_network
+    volumes:
+      - ./init.sql:/init.sql
+      - ./sql-config.cnf:/sql-config.cnf
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: some-mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80
+    networks:
+      - prestashop_network
+  prestashop:
+    container_name: prestashop
+    image: prestashop/prestashop:latest
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    ports:
+      - 8080:80
+    environment:
+      DB_SERVER: some-mysql
+      DB_NAME: prestashop
+      DB_USER: root
+      DB_PASSWD: admin
+      PS_INSTALL_AUTO: 1
+      PS_DOMAIN: localhost:8080
+      ADMIN_MAIL: demo@prestashop.com
+      ADMIN_PASSWD: prestashop_demo
+      PS_FOLDER_ADMIN: admina
+    networks:
+      - prestashop_network
+networks:
+    prestashop_network:
