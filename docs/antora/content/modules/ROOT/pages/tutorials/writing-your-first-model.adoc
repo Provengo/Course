@@ -1,4 +1,4 @@
-# Basic concepts: bthreads, envents, and sync.
+# Writing your first model
 
 [.text-center]
 video::first-model.mp4[width="80%"]
