@@ -1,0 +1,29 @@
+# Using wait-for and blocking for refining models
+
+[.text-center]
+video::refining-the-model.mp4[width="80%"]
+
+.Exercise: Interleaving two stories 
+[%collapsible]
+====
+Open your terminal and navigate to a directory where you have write permissions. Execute the following command and respond to the prompts:
+[source,console]
+----
+$ provengo create story-interleaving     
+----
+
+This will generate a directory named `story-interleaving`, which contains a `hello_world.js` file located in the `spec/js` subdirectory. Clear the existing content of this file (you can also rename it) and replace it with your content such that executing the command:
+
+[source,console] 
+---- 
+$ provengo analyze --style full -f pdf story-interleaving
+----
+ 
+generates the file `story-interleaving/products/run-source/testSpace.pdf` that look similar to: 
+
+[.text-center] 
+image::story-interleaving.svg[Expected Test Space, width=60%, link=self]   
+
+If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `story-interleaving/solution` directory.
+====
+
