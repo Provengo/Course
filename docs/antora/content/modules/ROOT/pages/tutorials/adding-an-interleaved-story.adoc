@@ -1,4 +1,4 @@
-# Adding an interleaved story
+# Story Interleaving 
 
 [.text-center]
 video::interleaving.mp4[width="80%"]
