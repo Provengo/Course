@@ -13,7 +13,7 @@
 ** xref:tutorials/writing-your-first-model.adoc[Writing your first model]
 ** xref:tutorials/adding-an-interleaved-story.adoc[Interleaving]
 ** xref:tutorials/refining-the-model.adoc[Model refinement]
-
+** xref:tutorials/event-sets.adoc[Bonus: Using event sets]
 
 
 //** xref:tutorials/selenium-events.adoc[Step 3: Selenium]

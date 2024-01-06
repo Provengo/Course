@@ -3,27 +3,55 @@
 [.text-center]
 video::refining-the-model.mp4[width="80%"]
 
-.Exercise: Interleaving two stories 
+.Exercise: Refining the the interleavings of two stories 
 [%collapsible]
 ====
 Open your terminal and navigate to a directory where you have write permissions. Execute the following command and respond to the prompts:
 [source,console]
 ----
-$ provengo create story-interleaving     
+$ provengo create refining-the-model     
 ----
 
-This will generate a directory named `story-interleaving`, which contains a `hello_world.js` file located in the `spec/js` subdirectory. Clear the existing content of this file (you can also rename it) and replace it with your content such that executing the command:
+This will generate a directory named `refining-the-model`, which contains a `hello_world.js` file located in the `spec/js` subdirectory. Clear the content of this file (you can also rename it) and replace with:
+
+[source,javascript] 
+---- 
+bthread("Adding product A, B, and C", function () {
+    sync({ request: Event('AddProductToCart', { name: 'A' }) })
+    sync({ request: Event('AddProductToCart', { name: 'B' }) })
+    sync({ request: Event('AddProductToCart', { name: 'C' }) })
+})
+
+bthread("Adding product 1, 2, and 3", function () {
+    sync({ request: Event('AddProductToCart', { name: '1' }) })
+    sync({ request: Event('AddProductToCart', { name: '2' }) })
+    sync({ request: Event('AddProductToCart', { name: '3' }) })
+})
+----
+
+Now, if you run
 
 [source,console] 
 ---- 
-$ provengo analyze --style full -f pdf story-interleaving
+$ provengo analyze --style full -f pdf refining-the-model
 ----
  
-generates the file `story-interleaving/products/run-source/testSpace.pdf` that look similar to: 
+you should get the file `refining-the-model/products/run-source/testSpace.pdf` that looks similar to: 
 
 [.text-center] 
-image::story-interleaving.svg[Expected Test Space, width=60%, link=self]   
+image::story-interleaving.svg[Test Space Before Your Code, width=60%, link=self]   
 
-If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `story-interleaving/solution` directory.
+Your task is to implement code that enforces the following sequence of events:
+
+- The action `+AddProductToCart {name:"A"}+` must be executed before `+AddProductToCart {name:"1"}+`.
+- The action `+AddProductToCart {name:"B"}+` must be executed before `+AddProductToCart {name:"2"}+`.
+- The action `+AddProductToCart {name:"C"}+` must be executed before `+AddProductToCart {name:"3"}+`.
+
+Upon successful implementation, your code should shape the state space as follows:
+
+[.text-center] 
+image::refining-the-model-expected.svg[Test Space With Your Code, width=60%, link=self]   
+
+If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `refining-the-model/solution` directory.
 ====
 
