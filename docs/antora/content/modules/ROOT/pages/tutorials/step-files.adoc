@@ -40,7 +40,7 @@ defineAction = function (name, func) {
         let session = this;
 
         // Request a start event
-        sync({ request: bp.Event(`Start(${name})`, { session: session, startEvent: true, data: data }) })
+        sync({ request: bp.Event(`Start(${name})`, { session: session, startEvent: true, parameters: data }) })
 
         // Block any other start events in the session while the function is executing
         block(AnyStartInSession(this.name), function () {
@@ -48,7 +48,7 @@ defineAction = function (name, func) {
             func(session, data)
 
             // Request an end event
-            sync({ request: bp.Event(`End(${name})`, { session: session, endEvent: true, data: data }) })
+            sync({ request: bp.Event(`End(${name})`, { session: session, endEvent: true, parameters: data }) })
         })
     }
 }
