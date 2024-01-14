@@ -1,0 +1,74 @@
+# Simplifying Complex Selenium Actions with Step Functions
+
+[.text-center]
+video::step-functions.mp4[width="80%"]
+
+.Exercise: Using Provengo to search for Pizza
+[%collapsible]
+====
+Open your terminal and navigate to a directory where you have write permissions. Execute the following command and respond to the prompts:
+[source,console]
+----
+$ provengo create step-files    
+----
+
+Executing the command will generate a directory named `step-files`, which contains a `hello_world.js` file located in the `spec/js` subdirectory. Delete this file and replace it with a file caleed `main.js` with the following content:
+[source,js]
+----
+const URL = 'https://www.google.com'
+
+bthread("Search", function () {
+    let s = new SeleniumSession("session").start(URL)
+    s.searchPizza({ searchTerm: "pizza" })
+})
+----
+
+Also, add the file `spec/js/actions.js` with the following content:
+
+[source,js]
+----
+// Define an event filter for start events in a session
+const AnyStartInSession = function (s) {
+    return bp.EventSet("AnyStartInSession-" + s, function (e) {
+        return e.data !== null && e.data.hasOwnProperty('startEvent') && e.data.startEvent && String(s).equals(e.data.session.name)
+    })
+}
+
+defineAction = function (name, func) {
+    // Add the new action to the SeleniumSession prototype
+    SeleniumSession.prototype[name] = function (data) {
+        let session = this;
+
+        // Request a start event
+        sync({ request: bp.Event(`Start(${name})`, { session: session, startEvent: true, data: data }) })
+
+        // Block any other start events in the session while the function is executing
+        block(AnyStartInSession(this.name), function () {
+            // Execute the function
+            func(session, data)
+
+            // Request an end event
+            sync({ request: bp.Event(`End(${name})`, { session: session, endEvent: true, data: data }) })
+        })
+    }
+}
+----
+
+This, of course, is not a complete solution. You will need to add some code to the `actions.js` file to make it work. We only copied the code we saw in the presentation here to save you some typing. 
+
+Your job is to add the code that will make the `searchPizza` function work. Once you incorporate your code, assuming that you have Selenium installed and running, executing the command:
+
+[source,console] 
+---- 
+$ provengo run --show  step-files
+----
+
+should open a browser window and search for pizza.
+You can use the following XPaths:
+
+* XPath for Google search box: `"//textarea[@type='search']"`
+* XPath for Google search button: `//input[@name='btnK']`
+
+If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `step-files/solution` directory.
+====
+
