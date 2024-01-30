@@ -16,8 +16,12 @@
 ** xref:tutorials/event-sets.adoc[Bonus: Using event sets]
 
 
-//** xref:tutorials/selenium-events.adoc[Step 3: Selenium]
-//** xref:tutorials/event-sets.adoc[Step 4: Event Sets]
-* Lesson 4: Actuation
+* Lesson 4: Actuation and test execution
 ** xref:tutorials/selenium.adoc[Selenium]
 ** xref:tutorials/step-files.adoc[Step files]    
+** xref:tutorials/execution.adoc[Test suites - creation & execution]    
+** xref:tutorials/ranking.adoc[Ranking & prioritization]    
+
+
+//** xref:tutorials/selenium-events.adoc[Step 3: Selenium]
+//** xref:tutorials/event-sets.adoc[Step 4: Event Sets]

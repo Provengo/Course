@@ -17,23 +17,31 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 
 [cols="1,3"]
 |===
-| Lesson| Description 
+| Lesson | Topics
 
-| xref:tutorials/basic_concepts.adoc[Bthreads and events]
-| Develop two simple interleaved user stories using bthreads and events.
+| A short introduction to Provengo and the course.
+| 
+xref:tutorials/welcome.adoc[Welcome to Provengo] 
+* xref:tutorials/overview.adoc[Course Overview]
 
-| xref:tutorials/using_js.adoc[JavaScript]
-| Use JavaScript to parametrize models and to develop richer user stories. 
+| Installing Provengo and using the command line interface.
+| 
+xref:tutorials/installation.adoc[Provengo Installation]
+* xref:tutorials/command-structure.adoc[Command Structure]
+* xref:tutorials/provengo-docs.adoc[Provengo Documentation]
 
-| xref:tutorials/selenium-events.adoc[Selenium]
-| Use Selenium to interact with the browser and how to use the selenium events to model a simple test of a website.
+| Writing a model and executing it.
+| 
+xref:tutorials/prestashop.adoc[Testing the Prestashop Application]
+* xref:tutorials/writing-your-first-model.adoc[Writing Your First Model]
+xref:tutorials/adding-an-interleaved-story.adoc[Interleaving]
+* xref:tutorials/refining-the-model.adoc[Model Refinement]
+* xref:tutorials/event-sets.adoc[Bonus: Using Event Sets]
 
-| xref:tutorials/event-sets.adoc[Event sets]
-| Add data to events and use `EvenSet`s to wait-for and block infinites sets of events.
+| Interacting with Web Applications and Test Suites.
+| 
+xref:tutorials/selenium.adoc[Using Selenium]
+* xref:tutorials/step-files.adoc[Working with Step Files]
+* xref:tutorials/execution.adoc[Creating and Executing Test Suites]
+* xref:tutorials/ranking.adoc[Ranking & prioritization]
 |===
-
-
-
-
-
-

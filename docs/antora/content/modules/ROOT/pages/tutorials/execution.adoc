@@ -1,0 +1,11 @@
+# Creating and running test suites 
+
+[.text-center]
+video::execution.mp4[width="80%"]
+
+.Exercise: Creating a gitest suite
+[%collapsible]
+====
+TBD
+====
+

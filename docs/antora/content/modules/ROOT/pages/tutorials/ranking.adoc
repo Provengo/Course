@@ -1,0 +1,11 @@
+# Ranking and Prioritization of Test Cases
+
+[.text-center]
+video::ranking.mp4[width="80%"]
+
+.Exercise: Creating an optimized test suite
+[%collapsible]
+====
+TBD
+====
+

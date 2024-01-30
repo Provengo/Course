@@ -1,2 +1,4 @@
 docs/antora/build
 .vscode
+*.mp3
+models/shopping/products

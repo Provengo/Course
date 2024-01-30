@@ -1,0 +1,11 @@
+# Introducing the system under test
+
+[.text-center]
+video::prestashop.mp4[width="80%"]
+
+.Exercise: Installing PrestaShop
+[%collapsible]
+====
+TBD
+====
+
