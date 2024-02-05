@@ -1,0 +1,11 @@
+# Provengo Commandline Interface
+
+[.text-center]
+video::cli.mp4[width="80%"]
+
+.Exercise: Using the CLI to create a model and run it
+[%collapsible]
+====
+TBD
+====
+

@@ -3,12 +3,12 @@
 ** xref:tutorials/welcome.adoc[Welcome]
 ** xref:tutorials/overview.adoc[Overview]
 
-* Lesson 2: Provengo CLI
+* Lesson 2: The Provengo tool
 ** xref:tutorials/installation.adoc[Installation]
 ** xref:tutorials/command-structure.adoc[Command structure]
 ** xref:tutorials/provengo-docs.adoc[Provengo docs]
 
-* Lesson 3: Model-Based Quality Engineering (MBQE)
+* Lesson 3: Modeling for testing
 ** xref:tutorials/prestashop.adoc[The prestashop application that we will test]
 ** xref:tutorials/writing-your-first-model.adoc[Writing your first model]
 ** xref:tutorials/adding-an-interleaved-story.adoc[Interleaving]
@@ -16,7 +16,7 @@
 ** xref:tutorials/event-sets.adoc[Event sets]
 
 
-* Lesson 4: Actuation and test execution
+* Lesson 4: Reports and execution
 ** xref:tutorials/selenium.adoc[Selenium]
 ** xref:tutorials/step-files.adoc[Step files]    
 ** xref:tutorials/execution.adoc[Test suites - creation & execution]    

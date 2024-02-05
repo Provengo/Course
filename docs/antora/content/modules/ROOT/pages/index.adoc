@@ -19,18 +19,18 @@ NOTE: Please visit https://docs.provengo.tech[provengo.tech] for the full docume
 |===
 | Lesson | Topics (click to view)
 
-| A short introduction to Provengo and the course.
+| 1) A short introduction to Provengo and the course.
 | 
 xref:tutorials/welcome.adoc[Welcome to Provengo] 
 ★ xref:tutorials/overview.adoc[Course overview]
 
-| Installing Provengo and using the command line interface.
+| 2) Installing Provengo and using the command line interface.
 | 
 xref:tutorials/installation.adoc[Provengo installation]
 ★ xref:tutorials/command-structure.adoc[Command structure]
 ★ xref:tutorials/provengo-docs.adoc[Provengo documentation]
 
-| Writing a model and executing it.
+| 3) Writing a test model and executing it.
 | 
 xref:tutorials/prestashop.adoc[The PrestaShop SUT]
 ★ xref:tutorials/writing-your-first-model.adoc[Writing your first model]
@@ -38,7 +38,7 @@ xref:tutorials/prestashop.adoc[The PrestaShop SUT]
 ★ xref:tutorials/refining-the-model.adoc[Model refinement]
 ★ xref:tutorials/event-sets.adoc[Event sets]
 
-| Interacting with Web applications and generating optimized test suites.
+| 4) Interacting with web applications and generating optimized test suites.
 | 
 xref:tutorials/selenium.adoc[Using Selenium]
 ★ xref:tutorials/step-files.adoc[Working with step files]
