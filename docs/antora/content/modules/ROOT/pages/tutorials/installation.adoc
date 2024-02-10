@@ -1,0 +1,11 @@
+# Installing Provengo
+
+[.text-center]
+video::installation.mp4[width="80%"]
+
+.Exercise: Install Provengo and test that it works
+[%collapsible]
+====
+TBD
+====
+
