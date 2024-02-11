@@ -79,10 +79,5 @@ provengo run –-show myFirstProject
 These commands will start a Selenium server, create a simple test script that opens Google's webpage, and then run this test using Provengo. If you have Selenium installed on your machine, executing these commands should open Google's webpage in a new browser window.
 + 
 The frisr command assumes that version 4.17.0 of the Selenium server jar file was downloaded to your current directory. If you have downloaded a different version, ensure to replace `4.17.0` in the command with the exact version number of your downloaded file.
-
-
-
-
-
 ====
 
