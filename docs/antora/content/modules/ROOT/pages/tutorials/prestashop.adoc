@@ -10,7 +10,7 @@ In this exercise, you will install PrestaShop on your local machine.
 
 The easiest way to install PrestaShop is to use Docker. If you don't have Docker installed, you can download it from the official website: link:https://www.docker.com/products/docker-desktop[Docker Desktop].
 
-1. Download the `prestashop.zip` file from link:{attachmentsdir}/prestashop.zip[here] and unzip it in a directory of your choice. On Ubuntu, you can use the `unzip` command to extract the zip file. For example:
+1. Download the `prestashop.zip` file from link:prestashop.zip[here] and unzip it in a directory of your choice. On Ubuntu, you can use the `unzip` command to extract the zip file. For example:
 
 [source,bash]
 ----
