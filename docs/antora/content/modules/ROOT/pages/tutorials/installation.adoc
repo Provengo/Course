@@ -6,6 +6,82 @@ video::installation.mp4[width="80%"]
 .Exercise: Install Provengo and test that it works
 [%collapsible]
 ====
-TBD
+* Prerequisits
+
+** Install Java:
+
+1. Download and install the latest version of Java from the link:https://www.oracle.com/java/technologies/javase-jdk11-downloads.html[Java website]. You can also use the following command to install Java on Ubuntu: `sudo apt-get install openjdk-17-jdk`.
+
+2. Open a terminal and run the command `java -version` to check that it is installed correctly.
+
+** Install Graphviz:
+
+1. Download and install the latest version of Graphviz from the link:https://graphviz.org/download/[Graphviz website]. You can also use the following command to install Graphviz on Ubuntu: `sudo apt-get install graphviz`.
+
+2. Open a terminal and run the command `dot -V` to check that it is installed correctly.
+
+** Install chrome driver for Selenium:
+
+1. Find the version of Chrome you are using by clicking on the three dots in the top right corner of the browser and selecting "Help" -> "About Google Chrome".
+
+2. Download the corresponding version of the Chrome driver from the link:https://sites.google.com/chromium.org/driver/[Chrome driver website]. To install the Chrome driver on Ubuntu, you can use the command: `sudo apt-get install chromium-chromedriver`. Alternatively, you can download it directly using `wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip`, extract it with `unzip chromedriver_linux64.zip`, and move it to the appropriate directory with `sudo mv chromedriver /usr/local/bin/chromedriver`.
+
+3. Open a terminal and run the command `chromedriver --version` to check that it is installed correctly.
+
+** Install the Selenium server jar:
+
+1. Download the Selenium server jar file directly from the link:https://www.selenium.dev/downloads/[Selenium website]. Alternatively, you can use the `wget` command to download it from the command line. Here's an example command for downloading Selenium server version 4.17.0: `wget https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.17.0/selenium-server-4.17.0.jar`.
+
+2. Open a terminal and run the command `java -jar selenium-server-4.17.0.jar` to check that it is installed correctly. Use the version of the jar file you downloaded.
+
+** Install Provengo:
+
+1. To install Provengo, you need to download the latest release and a shell script. You can use the `wget` command to download these files. After downloading, make the shell script executable. Here are the commands you need to run:
++
+[source,bash]
+----
+wget -nc https://downloads.provengo.tech/releases/Provengo-2024-02-03.uber.jar -O /usr/local/bin/Provengo.uber.jar
+
+sudo wget -nc https://downloads.provengo.tech/shell-scripts/provengo.sh -O /usr/local/bin/Provengo
+
+sudo chmod +x /usr/local/bin/provengo
+----
++
+To obtain the latest version of the software, please complete the registration form available at link:https://provengo.tech/register[Provengo Registration]. Once registered, you will be able to access the latest version. Replace the URL in the first `wget` command with the link to the latest version provided after registration.
+
+2. Open a terminal and run the command `provengo --version` to check that it is installed correctly.
+
+* Test Provengo by running the following command:
++
+[source,bash]
+----
+provengo --batch-mode create myFirstProject 
+provengo analyze -f pdf myFirstProject
+----
++
+If you have Graphviz on your machine, running these two commands should produce the test-space PDF file:
+`myFirstProject/products/run-source/testSpace.pdf`. Its content should look like the following image:
++
+image::testSpace.png[width="80%"]
+
+
+** To further verify the successful installation of Provengo, execute the following commands:
++
+[source,bash]
+----
+java -jar selenium-server-4.17.0.jar standalone&
+
+echo -e '// @provengo summon selenium\nbthread("", function () {new SeleniumSession().start("https://google.com")})' > myFirstProject/spec/js/hello-world.js
+
+provengo run –-show myFirstProject
+----
++
+These commands will start a Selenium server, create a simple test script that opens Google's webpage, and then run this test using Provengo. If you have Selenium installed on your machine, executing these commands should open Google's webpage in a new browser window.
+
+
+
+
+
+
 ====
 
