@@ -6,6 +6,36 @@ video::cli.mp4[width="80%"]
 .Exercise: Using the CLI to create a model and run it
 [%collapsible]
 ====
-TBD
+
+The following sequence of commands demonstrates the basic usage of the Provengo tool:
+
+[source,bash]
+----
+provengo --batch-mode create my_project
+----
+
+This command creates a new project named my_project in batch mode. The `--batch-mode`` option allows the command to run without interactive prompts.
+
+[source,bash]
+----
+provengo run my_project
+----
+
+This command runs the project named `my_project``. It executes all the tests defined in the project.
+
+[source,bash]
+----
+provengo analyze -f pdf my_project
+----
+
+This command analyzes `my_project` and generates a report in PDF format. The `-f pdf`` option specifies the format of the report.
+
+The generated report will be located in the `my_project/products/run-source/testSpace.pdf` directory. The report should look like this:
+
+image::testSpace.png[width="40%", align="center"]
+
+[%collapsible-end]
+
+
 ====
 
