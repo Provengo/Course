@@ -30,7 +30,7 @@ video::installation.mp4[width="80%"]
 
 ** Install the Selenium server jar:
 
-1. Download the Selenium server jar file directly from the link:https://www.selenium.dev/downloads/[Selenium website]. Alternatively, you can use the `wget` command to download it from the command line. Here's an example command for downloading Selenium server version 4.17.0: `wget https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.17.0/selenium-server-4.17.0.jar`.
+1. Download the Selenium server jar file from the link:https://www.selenium.dev/downloads/[Selenium website]. If you prefer using the command line, you can use the `wget` command to download it directly. For instance, to download Selenium server version 4.17.0, use the following command: `wget https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.17.0/selenium-server-4.17.0.jar`.
 
 2. Open a terminal and run the command `java -jar selenium-server-4.17.0.jar` to check that it is installed correctly. Use the version of the jar file you downloaded.
 
@@ -77,7 +77,8 @@ provengo run –-show myFirstProject
 ----
 +
 These commands will start a Selenium server, create a simple test script that opens Google's webpage, and then run this test using Provengo. If you have Selenium installed on your machine, executing these commands should open Google's webpage in a new browser window.
-
++ 
+The frisr command assumes that version 4.17.0 of the Selenium server jar file was downloaded to your current directory. If you have downloaded a different version, ensure to replace `4.17.0` in the command with the exact version number of your downloaded file.
 
 
 
