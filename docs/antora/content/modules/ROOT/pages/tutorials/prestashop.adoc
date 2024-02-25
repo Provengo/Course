@@ -29,10 +29,11 @@ docker-compose up -d
 ----
 
 3. Open your browser and go to `http://localhost:8080` to access the PrestaShop installation page: 
-+DS
-image::prestashop.png[width="40%"]
++
+[align="center", width="50%"]
+image::prestashop.png[]
 
-====
+====  
 
 include::feedback-button.adoc[]
 

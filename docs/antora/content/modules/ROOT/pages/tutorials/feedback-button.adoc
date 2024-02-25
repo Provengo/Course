@@ -1,7 +1,7 @@
 ++++
 <script>
 document.write(`
-<div style="text-align: center;">
+<div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
     <button id="feedbackButton" style="font-size:14px; padding: 5px 10px; cursor: pointer; border: none; color: white; background-color: #00000F; border-radius: 5px;">
             Help us by providing feedback on this page <i class="fa fa-comment" aria-hidden="true"></i>
     </button>
@@ -19,5 +19,5 @@ document.getElementById('feedbackButton').onclick = function() {
     var form = document.getElementById('feedbackForm');
     form.style.display = form.style.display === 'none' ? 'block' : 'none';
 };
-</script>
+</script> 
 ++++
