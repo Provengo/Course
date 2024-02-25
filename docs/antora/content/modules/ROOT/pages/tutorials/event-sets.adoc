@@ -3,16 +3,78 @@
 [.text-center]
 video::event-sets.mp4[width="80%"] 
 
-.Exercise: Implementing the rules of tic-tac-toe.
+.Exercise: Using events sets
 [%collapsible]
 ====
+
 Open your terminal and navigate to a directory where you have write permissions. Execute the following command and respond to the prompts:
 [source,console]
 ----
 $ provengo create EX-event-sets
 ----
 
-Executing the command will generate a directory named `EX-event-sets`, which contains a `hello_world.js` file located in the `spec/js` subdirectory. Clear the existing content of this file and replace it with the following code. If desired, you can also rename the file:
+Executing the command will generate a directory named `EX-event-sets`, which contains a `hello_world.js` file located in the `spec/js` subdirectory. Clear the existing content of this file and replace it with the following code. If desired, you can also rename the file. The extension must remain `.js`: 
+
+
+[source, javascript]
+----
+const events = [
+    Event('A', { length: 10, age: 7 }),
+    Event('B', { length: 12, age: 3 }),
+    Event('A', { length: 1, age: 2 }),
+    Event('B', { length: 2, age: 3 }),
+];
+
+// For each event, create a bthread and sync the event
+events.forEach((event, index) => {
+    bthread(`bthread-${index}`, function () {
+        bp.sync({ request: event });
+    });
+});
+
+bthread("", function () {
+    bp.sync({
+        waitFor:
+            new EventSet("B with short length", e => e.name == 'B' && e.data.length < 4),
+        block:
+            new EventSet("A with old age", e => e.name == 'A' && e.data.age > 6)
+    });
+});
+----
+
+Read this code carefully and make sure you understand what it does. It defines an array of events, where each event has a name and a data object. The data object has two properties: `length` and `age`. The code then creates a b-thread for each event and syncs the event. Finally, the code creates a b-thread that waits for events that have a name of `B` and a `length` less than 4. The b-thread blocks events that have a name of `A` and an `age` greater than 6.
+
+After you've finished reviewing the code, run the following command:
+
+[source,console] 
+---- 
+$ provengo analyze -f pdf EX-event-sets 
+----
+
+Executing the command will produce a file named `EX-event-sets/products/run-source/testSpace.pdf`. This file represents the test space of the model. Please open this file and compare it with the graph presented in the video to ensure they match.
+
+Next, adjust the code to make the file content align with the following structure:
+
+[.text-center] 
+image::EX-event-sets.svg[Expected Test Space, width=80%, link=self]   
+
+If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `EX-event-sets/solution` directory.
+
+====
+
+
+
+
+.Bunus Exercise: Implementing the rules of tic-tac-toe.
+[%collapsible]
+====
+Open your terminal and navigate to a directory where you have write permissions. Execute the following command and respond to the prompts:
+[source,console]
+----
+$ provengo create EX-ttt
+----
+
+Executing the command will generate a directory named `EX-ttt`, which contains a `hello_world.js` file located in the `spec/js` subdirectory. Clear the existing content of this file and replace it with the following code. If desired, you can also rename the file:
 
 [source, javascript]
 ----
@@ -94,10 +156,10 @@ Once you are done reading the code, execute the following command:
 
 [source,console] 
 ---- 
-$ provengo analyze -f pdf EX-event-sets 
+$ provengo analyze -f pdf EX-ttt 
 ----
 
-it will generate a file named `EX-event-sets/products/run-source/testSpace.pdf` that contains the test space of the model. Open the file and make sure that it looks like this: 
+it will generate a file named `EX-ttt/products/run-source/testSpace.pdf` that contains the test space of the model. Open the file and make sure that it looks like this: 
   
 [.text-center] 
 image::event-sets-testSpace.svg[Expected Test Space, width=80%,link=self]    
@@ -110,7 +172,7 @@ Once you are done, the test space should look like this:
 image::event-sets-testSpace2.svg[Expected Test Space, width=80%, link=self]    
 
 
-If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `EX-event-sets/solution` directory. Note that we only plotted the state-space for `N=2`, but the solution works for any value of `N`. One of the advantages of using event sets is that we can write a model that works for any value of `N` and use the `analyze` feature of Provengo to display the state for small values of `N`.
+If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `EX-ttt/solution` directory. Note that we only plotted the state-space for `N=2`, but the solution works for any value of `N`. One of the advantages of using event sets is that we can write a model that works for any value of `N` and use the `analyze` feature of Provengo to display the state for small values of `N`.
 ====
 
 include::feedback-button.adoc[]

@@ -1,7 +1,7 @@
-# EX-multi-session
+# EX-event-sets
 
 ---
-2023-12-25 19:35:14
+2024-02-25 12:26:53
 geraw
 
 Provengo project for spec-ing and testing my system.
@@ -28,7 +28,7 @@ Provengo project for spec-ing and testing my system.
 
 ## Useful Commands
 
-⚠️ NOTE: In the below listings, we assume that `provengo` is in the system's PATH variable, and that `/home/geraw/provengo/Course/EX-multi-session` is the path to this directory.
+⚠️ NOTE: In the below listings, we assume that `provengo` is in the system's PATH variable, and that `/home/geraw/provengo/Course/models/EX-event-sets` is the path to this directory.
 
 For full documentation go to [https://docs.provengo.tech](docs.provengo.tech).
 
@@ -36,14 +36,14 @@ For full documentation go to [https://docs.provengo.tech](docs.provengo.tech).
 
 Perform a single run through the specification. Good for "Sanity checks", i.e. to see examples of what can happen.
 
-    provengo run --dry /home/geraw/provengo/Course/EX-multi-session
+    provengo run --dry /home/geraw/provengo/Course/models/EX-event-sets
 
 
 ### Visualize the Spec
 
 Draw the specification in a PDF file.
 
-    provengo analyze -f pdf /home/geraw/provengo/Course/EX-multi-session
+    provengo analyze -f pdf /home/geraw/provengo/Course/models/EX-event-sets
 
 
 ⚠️ NOTE: This requires [Graphviz](http://graphviz.org) to be installed.
@@ -53,7 +53,7 @@ Draw the specification in a PDF file.
 
 Sample 10 scenarios into a file. The scenarios are stored in a file called `samples.json` (this can be changed using the `-o`/`--output-file` switch).
 
-    provengo sample --overwrite --size 10 /home/geraw/provengo/Course/EX-multi-session
+    provengo sample --overwrite --size 10 /home/geraw/provengo/Course/models/EX-event-sets
 
 
 ### Create an Optimized Test Suite
@@ -62,19 +62,19 @@ Generate a test suite of 5 tests that provides a good coverage of items in the [
 
 **Requires running `sample` first** (the previous command)**.**
 
-    provengo ensemble --size 5 /home/geraw/provengo/Course/EX-multi-session
+    provengo ensemble --size 5 /home/geraw/provengo/Course/models/EX-event-sets
 
 #### Visualize the Spec and the Suite
 
 Draw the specification, and highlight the traces in the optimized test suite create by the previous command.
 
-    provengo analyze -f pdf --highlight ensemble.json /home/geraw/provengo/Course/EX-multi-session
+    provengo analyze -f pdf --highlight ensemble.json /home/geraw/provengo/Course/models/EX-event-sets
 
 ### Create Test Scripts for Third Party Systems
 
 Converts the runs in `ensemble.json` to automation test scripts.
 
-    provengo gen-scripts -s ensemble.json /home/geraw/provengo/Course/EX-multi-session
+    provengo gen-scripts -s ensemble.json /home/geraw/provengo/Course/models/EX-event-sets
 
 ## AI code completion
 To enable AI code completion, please use a code completion plugin (e.g., [GitHub Copilot](https://github.com/features/copilot)) and keep open the files inside the [config/ai](config/ai) folder.
