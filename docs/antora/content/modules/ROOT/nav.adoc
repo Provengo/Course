@@ -6,7 +6,7 @@
 * Lesson 2: Setup
 ** xref:tutorials/installation.adoc[Installation]
 ** xref:tutorials/command-structure.adoc[Command structure]
-** xref:tutorials/provengo-docs.adoc[Provengo docs]
+// ** xref:tutorials/provengo-docs.adoc[Provengo docs]
 
 * Lesson 3: Modeling
 ** xref:tutorials/prestashop.adoc[The prestashop application that we will test]
@@ -25,3 +25,5 @@
 
 //** xref:tutorials/selenium-events.adoc[Step 3: Selenium]
 //** xref:tutorials/event-sets.adoc[Step 4: Event Sets]
+
+

@@ -81,3 +81,4 @@ These commands will start a Selenium server, create a simple test script that op
 The frisr command assumes that version 4.17.0 of the Selenium server jar file was downloaded to your current directory. If you have downloaded a different version, ensure to replace `4.17.0` in the command with the exact version number of your downloaded file.
 ====
 
+include::feedback-button.adoc[]

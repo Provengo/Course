@@ -87,3 +87,4 @@ image::selenium-events-testSpace2.svg[Expected Test Space, width=30%,link=self]
 If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `EX-selenium/solution` directory.
 ====
 
+include::feedback-button.adoc[]

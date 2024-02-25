@@ -72,3 +72,4 @@ You can use the following XPaths:
 If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `step-files/solution` directory.
 ====
 
+include::feedback-button.adoc[]

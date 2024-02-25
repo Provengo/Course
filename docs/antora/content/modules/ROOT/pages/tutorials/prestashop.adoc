@@ -34,3 +34,5 @@ image::prestashop.png[width="40%"]
 
 ====
 
+include::feedback-button.adoc[]
+

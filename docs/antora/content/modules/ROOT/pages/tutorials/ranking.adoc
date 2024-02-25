@@ -9,3 +9,4 @@ video::ranking.mp4[width="80%"]
 TBD
 ====
 
+include::feedback-button.adoc[]

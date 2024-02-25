@@ -36,27 +36,4 @@ image::testSpace.png[width="40%", align="center"]
 ====
 [%collapsible-end]
 
-
-++++
-<script>
-document.write(`
-<div style="text-align: center;">
-    <button id="feedbackButton" style="font-size:14px; padding: 5px 10px; cursor: pointer; border: none; color: white; background-color: #0000FF; border-radius: 5px;">
-            Help us by providing feedback on this page <i class="fa fa-comment" aria-hidden="true"></i>
-    </button>
-</div>
-
-<div id="feedbackForm" style="display:none">
-    <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSdONvkUvYA8l0b2vdDyC5Zbb9ZUvKjleZ-Oi3-bs-fDzeB-bQ/viewform?usp=pp_url&entry.1883751326=${encodeURIComponent(window.location.href)}" 
-    width="90%" 
-    height="480">
-    </iframe>
-</div>`);
-document.getElementById('feedbackButton').onclick = function() {
-    var form = document.getElementById('feedbackForm');
-    form.style.display = form.style.display === 'none' ? 'block' : 'none';
-};
-</script>
-++++
-
+include::feedback-button.adoc[]

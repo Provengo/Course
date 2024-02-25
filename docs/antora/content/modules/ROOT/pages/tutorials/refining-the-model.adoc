@@ -55,3 +55,4 @@ image::refining-the-model-expected.svg[Test Space With Your Code, width=60%, lin
 If you get a different result, try to figure out what went wrong. If you get stuck, you can find the solution in the `refining-the-model/solution` directory.
 ====
 
+include::feedback-button.adoc[]
