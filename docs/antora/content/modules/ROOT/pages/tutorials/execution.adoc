@@ -1,12 +1,69 @@
-# Creating and running test suites 
+= Creating and Running Test Suites 
 
 [.text-center]
 video::execution.mp4[width="80%"]
 
-.Exercise: Creating a gitest suite
+.Exercise: Creating a gitest Suite
 [%collapsible]
 ====
-TBD
+
+Begin by opening your terminal and navigating to a directory where you have write permissions. Then, execute the command below and follow the prompts:
+
+[source,console]
+----
+$ provengo --batch-mode create EX-execution
+----
+
+This command will generate a directory named `EX-execution`. Inside this directory, you'll find a `hello_world.js` file located in the `spec/js` subdirectory. Clear the existing content of this file and replace it with the code provided below. If you wish, you can rename the file, but ensure the extension remains `.js`: 
+
+[source, javascript]
+----
+const SESSIONS = [
+    { name: "s1", customer: Customer(…), products: [Product(…), Product(…)] },
+    { name: "s2", customer: Customer(…), products: [Product(…), Product(…)] },
+]
+
+SESSIONS.forEach(session => {
+    bthread("shopping", function () {
+        with (new SeleniumSession(session.name).start(URL)) {
+            for (i in session.products)
+                addToCart(session.products[i]);
+
+            checkout()
+        }
+    })
+
+    bthread("login", function () {
+        with (new SeleniumSession(session.name).start(URL)) {
+            login(session.customer)
+        }
+    })
+
+    bthread("dont-checkout-before-login", function () {
+        sync({
+            waitFor: EventSet("", e => e.name == "End(login)" && e.data.session.name == session.name),
+            block: EventSet("", e => e.name == "Start(checkout)" && e.data.session.name == session.name)
+        });
+    })
+})
+----
+
+Read through the code and ensure you understand what it does. Once you're ready, execute the command below to generate a random test suite:
+
+
+[source,console]
+----
+$ provengo sample --size 100 -o random.sample  EX-execution
+----
+
+This command will generate a random sample of 100 test cases. Once the execution is complete, you can view the results by opening the `random.sample` file in your text editor.
+
+The file should be of the form:
+
+
+
+
+
 ====
 
 include::feedback-button.adoc[]

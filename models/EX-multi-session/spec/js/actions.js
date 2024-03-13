@@ -1,20 +1,10 @@
 // @provengo summon selenium
-
-// const AnyStartInSession = function (s) {
-//     // if (e.data != null && 'startEvent' in e.data && e.data.startEvent) {
-//     //     bp.log.info(e.data.session.name)
-//     // }
-//     return EventSet("AnyStartInSession-" + s, e => e.data != null && 'startEvent' in e.data
-//         && e.data.startEvent && e.data.startEvent && String(s).equals(e.data.session.name))
-// }
-
 const AnyStartInSession = function (s) {
     return EventSet(
         `AnyStartInSession-${s}`,
         e => e.data != null && 'startEvent' in e.data && e.data.startEvent && s.name === e.data.session.name
     )
 }
-
 
 defineAction = function (name, func) {
   SeleniumSession.prototype[name] = function (data) {
