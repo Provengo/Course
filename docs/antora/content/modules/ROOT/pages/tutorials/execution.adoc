@@ -3,7 +3,7 @@
 [.text-center]
 video::execution.mp4[width="80%"]
 
-.Exercise: Creating a gitest Suite
+.Exercise: Creating a test Suite
 [%collapsible]
 ====
 
