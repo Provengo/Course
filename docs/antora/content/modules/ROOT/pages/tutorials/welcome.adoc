@@ -1,0 +1,24 @@
+= Welcome to Provengo
+
+Provengo is a tool designed for testers and other stakeholders in a software project. It allows you to describe the possible usage scenarios of the product in a compositional manner and translate this description into test plans with optimal coverage.
+
+Provengo is based on the behavioral-programming modeling approach, which allows for a natural and incremental description of complex reactive systems. With Provengo, users can describe high-level scenarios, interleave them to get combined scenarios, and map them to detailed scenarios that go all the way to clicking buttons, selecting radio-boxes, and filling fields using the Selenium library.
+
+// [.text-center]
+// image::provengo_diagram.svg[width="80%", align="center"]
+
+== Key Features
+
+* **Compositional Scenario Description**: Describe usage scenarios in a modular way.
+* **Optimal Test Coverage**: Generate test plans that ensure comprehensive coverage.
+* **Behavioral Programming**: Use a modeling approach that supports incremental and natural descriptions of complex systems.
+* **Integration with Selenium**: Automate detailed interactions with web applications using Selenium.
+
+== How It Works
+
+1. **Describe High-Level Scenarios**: Define the main actions and events that can occur in the system.
+2. **Interleave Scenarios**: Combine multiple high-level scenarios to explore different interactions and edge cases.
+3. **Map to Detailed Scenarios**: Translate the combined scenarios into detailed test steps, including UI interactions with Selenium.
+ 
+
+include::feedback-button.adoc[]

@@ -1,0 +1,38 @@
+= Course Overview
+
+This course is designed to provide a comprehensive understanding of Provengo, a tool for testers and other stakeholders in a software project. The course is divided into three main sections:
+
+== Installing Provengo and Using the Command Line Interface
+
+In this section, you will learn how to install Provengo and use its command line interface effectively.
+
+* **Provengo Installation**: Step-by-step instructions on how to install Provengo on your system.
+* **Command Structure**: An overview of the command structure used in Provengo, including common commands and their usage.
+* **Provengo Documentation**: Guidance on how to navigate and utilize the official Provengo documentation for further learning and troubleshooting.
+
+== Writing a Test Model and Executing It
+
+This section focuses on writing test models and executing them using Provengo.
+
+* **The PrestaShop SUT**: Introduction to the PrestaShop System Under Test (SUT) and its significance in the course.
+* **Writing Your First Model**: A hands-on guide to writing your first test model in Provengo.
+* **Interleaving**: Understanding the concept of interleaving and how to apply it to create comprehensive test scenarios.
+* **Model Refinement**: Techniques for refining your test models to improve accuracy and coverage.
+* **Event Sets**: Explanation of event sets and their role in defining and managing test events.
+
+== Interacting with Web Applications and Generating Optimized Test Suites
+
+In this section, you will learn how to interact with web applications and generate optimized test suites using Provengo.
+
+* **Using Selenium**: Introduction to Selenium and how it integrates with Provengo for web application testing.
+* **Working with Step Files**: Detailed instructions on creating and using step files to define test steps.
+* **Creating & Executing Test Suites**: A comprehensive guide to creating and executing test suites in Provengo.
+* **Ranking & Prioritization**: Techniques for ranking and prioritizing test cases to ensure optimal test coverage and efficiency.
+
+== Conclusion
+
+By the end of this course, you will have a solid understanding of how to use Provengo to create, refine, and execute test models, interact with web applications, and generate optimized test suites. You will also be equipped with the knowledge to navigate the Provengo documentation and utilize its command line interface effectively.
+
+For any questions or further assistance, please refer to the official Provengo documentation or contact the course instructor.
+
+include::feedback-button.adoc[]
